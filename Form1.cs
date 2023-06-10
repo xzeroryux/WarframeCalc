@@ -41,9 +41,9 @@ namespace WarframeCalc
                 armor = carmor / (carmor + 300);//сопротивление брони
                 ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
 
-                punch = Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
+                punch =    Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
                 piercing = Math.Round(Math.Round(Convert.ToDouble(textBox2.Text) / kvant) * kvant, 2);
-                slash = Math.Round(Math.Round(Convert.ToDouble(textBox3.Text) / kvant) * kvant, 2);
+                slash =    Math.Round(Math.Round(Convert.ToDouble(textBox3.Text) / kvant) * kvant, 2);
 
                 if (Infested.Checked == true)
                 {
