@@ -40,9 +40,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.Infested = new System.Windows.Forms.RadioButton();
+            this.Grineer = new System.Windows.Forms.RadioButton();
+            this.Corpus = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -184,45 +184,43 @@
             this.label6.Text = "Фракция:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton1
+            // Infested
             // 
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(548, 50);
-            this.radioButton1.MaximumSize = new System.Drawing.Size(170, 25);
-            this.radioButton1.MinimumSize = new System.Drawing.Size(170, 25);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(170, 25);
-            this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Зараженные (Бегун)";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.Infested.Checked = true;
+            this.Infested.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Infested.Location = new System.Drawing.Point(548, 50);
+            this.Infested.MaximumSize = new System.Drawing.Size(170, 25);
+            this.Infested.MinimumSize = new System.Drawing.Size(170, 25);
+            this.Infested.Name = "Infested";
+            this.Infested.Size = new System.Drawing.Size(170, 25);
+            this.Infested.TabIndex = 12;
+            this.Infested.TabStop = true;
+            this.Infested.Text = "Зараженные (Бегун)";
+            this.Infested.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // Grineer
             // 
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(548, 80);
-            this.radioButton2.MaximumSize = new System.Drawing.Size(170, 25);
-            this.radioButton2.MinimumSize = new System.Drawing.Size(170, 25);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(170, 25);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Гринир (Тяжелая пулеметчиr Кувы)";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.Grineer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Grineer.Location = new System.Drawing.Point(548, 80);
+            this.Grineer.MaximumSize = new System.Drawing.Size(170, 25);
+            this.Grineer.MinimumSize = new System.Drawing.Size(170, 25);
+            this.Grineer.Name = "Grineer";
+            this.Grineer.Size = new System.Drawing.Size(170, 25);
+            this.Grineer.TabIndex = 13;
+            this.Grineer.Text = "Гринир (Тяжелая пулеметчиr Кувы)";
+            this.Grineer.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // Corpus
             // 
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.Location = new System.Drawing.Point(548, 110);
-            this.radioButton3.MaximumSize = new System.Drawing.Size(170, 25);
-            this.radioButton3.MinimumSize = new System.Drawing.Size(170, 25);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(170, 25);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Корпус";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.Corpus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Corpus.Location = new System.Drawing.Point(548, 110);
+            this.Corpus.MaximumSize = new System.Drawing.Size(170, 25);
+            this.Corpus.MinimumSize = new System.Drawing.Size(170, 25);
+            this.Corpus.Name = "Corpus";
+            this.Corpus.Size = new System.Drawing.Size(170, 25);
+            this.Corpus.TabIndex = 14;
+            this.Corpus.Text = "Корпус";
+            this.Corpus.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
@@ -233,7 +231,6 @@
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(170, 25);
             this.radioButton4.TabIndex = 15;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Порабощенные";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
@@ -303,9 +300,9 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.Corpus);
+            this.Controls.Add(this.Grineer);
+            this.Controls.Add(this.Infested);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
@@ -344,9 +341,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton Infested;
+        private System.Windows.Forms.RadioButton Grineer;
+        private System.Windows.Forms.RadioButton Corpus;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
