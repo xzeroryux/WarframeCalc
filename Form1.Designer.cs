@@ -43,7 +43,7 @@
             this.Infested = new System.Windows.Forms.RadioButton();
             this.Grineer = new System.Windows.Forms.RadioButton();
             this.Corpus = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.Orokin = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.Weapons = new System.Windows.Forms.Label();
@@ -119,6 +119,8 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 27);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "0";
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
@@ -129,6 +131,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 27);
             this.textBox2.TabIndex = 6;
+            this.textBox2.Text = "0";
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
@@ -139,6 +143,8 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(160, 27);
             this.textBox3.TabIndex = 7;
+            this.textBox3.Text = "0";
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // textBox4
             // 
@@ -149,6 +155,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(160, 27);
             this.textBox4.TabIndex = 8;
+            this.textBox4.Text = "0";
             // 
             // label5
             // 
@@ -222,17 +229,17 @@
             this.Corpus.Text = "Корпус";
             this.Corpus.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // Orokin
             // 
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton4.Location = new System.Drawing.Point(548, 140);
-            this.radioButton4.MaximumSize = new System.Drawing.Size(170, 25);
-            this.radioButton4.MinimumSize = new System.Drawing.Size(170, 25);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(170, 25);
-            this.radioButton4.TabIndex = 15;
-            this.radioButton4.Text = "Порабощенные";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.Orokin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Orokin.Location = new System.Drawing.Point(548, 140);
+            this.Orokin.MaximumSize = new System.Drawing.Size(170, 25);
+            this.Orokin.MinimumSize = new System.Drawing.Size(170, 25);
+            this.Orokin.Name = "Orokin";
+            this.Orokin.Size = new System.Drawing.Size(170, 25);
+            this.Orokin.TabIndex = 15;
+            this.Orokin.Text = "Порабощенные";
+            this.Orokin.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -299,7 +306,7 @@
             this.Controls.Add(this.Weapons);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.Orokin);
             this.Controls.Add(this.Corpus);
             this.Controls.Add(this.Grineer);
             this.Controls.Add(this.Infested);
@@ -344,7 +351,7 @@
         private System.Windows.Forms.RadioButton Infested;
         private System.Windows.Forms.RadioButton Grineer;
         private System.Windows.Forms.RadioButton Corpus;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton Orokin;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label Weapons;
