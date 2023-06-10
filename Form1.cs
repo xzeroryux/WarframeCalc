@@ -32,41 +32,34 @@ namespace WarframeCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty)
+            
+            kvant = Math.Round(Convert.ToDouble(textBox4.Text) / N , 2);
+
+            carmor = Convert.ToDouble(textBox6.Text);//чистая броня
+            armor = carmor / (carmor + 300);//сопротивление брони
+            ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
+
+            punch =    Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
+            piercing = Math.Round(Math.Round(Convert.ToDouble(textBox2.Text) / kvant) * kvant, 2);
+            slash =    Math.Round(Math.Round(Convert.ToDouble(textBox3.Text) / kvant) * kvant, 2);
+
+            if (Infested.Checked == true)
             {
-
-                kvant = Math.Round(Convert.ToDouble(textBox4.Text) / N , 2);
-
-                carmor = Convert.ToDouble(textBox6.Text);//чистая броня
-                armor = carmor / (carmor + 300);//сопротивление брони
-                ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
-
-                punch =    Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
-                piercing = Math.Round(Math.Round(Convert.ToDouble(textBox2.Text) / kvant) * kvant, 2);
-                slash =    Math.Round(Math.Round(Convert.ToDouble(textBox3.Text) / kvant) * kvant, 2);
-
-                if (Infested.Checked == true)
-                {
-                    InfestedDamage();
-                }
-                if (Grineer.Checked == true)
-                {
-                    GrineerDamage();
-                }
-                if (Corpus.Checked == true)
-                {
-                    CorpusDamage();
-                }
-                if (Orokin.Checked == true)
-                {
-                    OrokinDamage();
-                }
-
+                InfestedDamage();
             }
-            else
+            if (Grineer.Checked == true)
             {
-                MessageBox.Show("Введите значения","Ошибка");
+                GrineerDamage();
             }
+            if (Corpus.Checked == true)
+            {
+                CorpusDamage();
+            }
+            if (Orokin.Checked == true)
+            {
+                OrokinDamage();
+            }
+
 
         }
 
