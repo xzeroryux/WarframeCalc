@@ -49,6 +49,7 @@
             this.Weapons = new System.Windows.Forms.Label();
             this.Lex_Prime = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.ArmorResistance_Text = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -296,11 +297,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ArmorResistance_Text
+            // 
+            this.ArmorResistance_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ArmorResistance_Text.Location = new System.Drawing.Point(432, 213);
+            this.ArmorResistance_Text.Name = "ArmorResistance_Text";
+            this.ArmorResistance_Text.Size = new System.Drawing.Size(360, 20);
+            this.ArmorResistance_Text.TabIndex = 21;
+            this.ArmorResistance_Text.Text = "Сопротивление брони:";
+            this.ArmorResistance_Text.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.ArmorResistance_Text);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Lex_Prime);
             this.Controls.Add(this.Weapons);
@@ -357,6 +369,7 @@
         private System.Windows.Forms.Label Weapons;
         private System.Windows.Forms.Label Lex_Prime;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label ArmorResistance_Text;
     }
 }
 

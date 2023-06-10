@@ -13,14 +13,14 @@ namespace WarframeCalc
 {
     public partial class Form1 : Form
     {
-
-        double N = 16; //Константа всегда равная 16
-
         public Form1()
         {
             InitializeComponent();
 
         }
+
+        double N = 16; //Константа всегда равная 16
+
         double kvant, carmor, armor;
 
         double punch, piercing, slash, sum,
@@ -30,42 +30,6 @@ namespace WarframeCalc
 
         double summ; 
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (textBox1.Text == string.Empty)
-            {
-                textBox1.Text = "0";
-            }
-            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
-            
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (textBox2.Text == string.Empty)
-            {
-                textBox2.Text = "0";
-            }
-            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (textBox3.Text == string.Empty)
-            {
-                textBox3.Text = "0";
-            }
-            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
-        }
-
-
-
-        /*
-        if (textBox1.Text == string.Empty)
-            {
-                textBox1.Text = "0";
-            }
-        */
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty)
@@ -75,6 +39,7 @@ namespace WarframeCalc
 
                 carmor = Convert.ToDouble(textBox6.Text);//чистая броня
                 armor = carmor / (carmor + 300);//сопротивление брони
+                ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
 
                 punch = Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
                 piercing = Math.Round(Math.Round(Convert.ToDouble(textBox2.Text) / kvant) * kvant, 2);
@@ -151,7 +116,36 @@ namespace WarframeCalc
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = string.Empty;
+            textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = "0";
+            textBox5.Text = string.Empty;
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == string.Empty)
+            {
+                textBox1.Text = "0";
+            }
+            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
+
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == string.Empty)
+            {
+                textBox2.Text = "0";
+            }
+            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (textBox3.Text == string.Empty)
+            {
+                textBox3.Text = "0";
+            }
+            textBox4.Text = Convert.ToString(Convert.ToDouble(textBox1.Text) + Convert.ToDouble(textBox2.Text) + Convert.ToDouble(textBox3.Text));
         }
     }
 }
