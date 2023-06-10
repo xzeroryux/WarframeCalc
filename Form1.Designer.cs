@@ -186,6 +186,7 @@
             // 
             // radioButton1
             // 
+            this.radioButton1.Checked = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton1.Location = new System.Drawing.Point(548, 50);
             this.radioButton1.MaximumSize = new System.Drawing.Size(170, 25);
@@ -265,17 +266,17 @@
             this.Weapons.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Weapons.Location = new System.Drawing.Point(905, 45);
             this.Weapons.Name = "Weapons";
-            this.Weapons.Size = new System.Drawing.Size(72, 20);
+            this.Weapons.Size = new System.Drawing.Size(77, 20);
             this.Weapons.TabIndex = 18;
-            this.Weapons.Text = "Оружие";
+            this.Weapons.Text = "Оружие:";
             // 
             // Lex_Prime
             // 
             this.Lex_Prime.AutoSize = true;
-            this.Lex_Prime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Lex_Prime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Lex_Prime.Location = new System.Drawing.Point(905, 82);
             this.Lex_Prime.Name = "Lex_Prime";
-            this.Lex_Prime.Size = new System.Drawing.Size(109, 20);
+            this.Lex_Prime.Size = new System.Drawing.Size(119, 20);
             this.Lex_Prime.TabIndex = 19;
             this.Lex_Prime.Text = "Лекс Прайм";
             this.Lex_Prime.Click += new System.EventHandler(this.label9_Click);
