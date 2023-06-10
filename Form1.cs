@@ -21,21 +21,23 @@ namespace WarframeCalc
 
         double N = 16; //Константа всегда равная 16
 
-        double kvant, carmor, armor;
+        double kvant, carmor, armor, MultiplierArmor, finarmor;
 
         double punch, piercing, slash, sum,
                punch1, piercing1, slash1,
                punch2, piercing2, slash2,
                punch3, piercing3, slash3;
 
-        double summ; 
 
         private void button1_Click(object sender, EventArgs e)
         {
             
             kvant = Math.Round(Convert.ToDouble(textBox4.Text) / N , 2);
-
+            
             carmor = Convert.ToDouble(textBox6.Text);//чистая броня
+            MultiplierArmor = 1 + 0.005 * Math.Pow((Convert.ToDouble(textBox8.Text) - Convert.ToDouble(textBox7.Text)), 1.75); //Множитель брони до 70 лвл
+            finarmor = carmor * MultiplierArmor; //Финальная броня
+            label9.Text = $"Итоговая броня: {Math.Round(finarmor, 0)}";
             armor = carmor / (carmor + 300);//сопротивление брони
             ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
 
@@ -74,14 +76,19 @@ namespace WarframeCalc
         }
         void GrineerDamage()
         {
+
             punch1 = Math.Round(punch * 0.75, 3);
             slash1 = slash * 1.25;
+
             piercing2 = piercing * 1.5;
             slash2 = slash1 * 0.85;
+
             punch3 = punch1 * 0.75 * armor;
             piercing3 = piercing2 * 0.5 * armor;
             slash3 = slash2 * 0.85 * armor;
+
             sum = Math.Round(punch3 + piercing3 + slash3);
+
             textBox1.Text = punch3.ToString();
             textBox2.Text = piercing3.ToString();
             textBox3.Text = slash3.ToString();

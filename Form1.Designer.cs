@@ -50,6 +50,11 @@
             this.Lex_Prime = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.ArmorResistance_Text = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -246,18 +251,18 @@
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(432, 186);
-            this.label7.MaximumSize = new System.Drawing.Size(110, 20);
+            this.label7.MaximumSize = new System.Drawing.Size(0, 20);
             this.label7.MinimumSize = new System.Drawing.Size(110, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 20);
+            this.label7.Size = new System.Drawing.Size(176, 20);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Броня:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Text = "Базовая броня:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(548, 183);
+            this.textBox6.Location = new System.Drawing.Point(652, 183);
             this.textBox6.MaximumSize = new System.Drawing.Size(160, 27);
             this.textBox6.MinimumSize = new System.Drawing.Size(160, 27);
             this.textBox6.Name = "textBox6";
@@ -300,18 +305,79 @@
             // ArmorResistance_Text
             // 
             this.ArmorResistance_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ArmorResistance_Text.Location = new System.Drawing.Point(432, 213);
+            this.ArmorResistance_Text.Location = new System.Drawing.Point(432, 328);
             this.ArmorResistance_Text.Name = "ArmorResistance_Text";
             this.ArmorResistance_Text.Size = new System.Drawing.Size(360, 20);
             this.ArmorResistance_Text.TabIndex = 21;
             this.ArmorResistance_Text.Text = "Сопротивление брони:";
             this.ArmorResistance_Text.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(432, 223);
+            this.label8.MaximumSize = new System.Drawing.Size(0, 20);
+            this.label8.MinimumSize = new System.Drawing.Size(110, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(176, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Уровень врага:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(432, 293);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(286, 20);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Итоговая броня:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox7.Location = new System.Drawing.Point(652, 216);
+            this.textBox7.MaximumSize = new System.Drawing.Size(160, 27);
+            this.textBox7.MinimumSize = new System.Drawing.Size(160, 27);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(160, 27);
+            this.textBox7.TabIndex = 24;
+            this.textBox7.Text = "20";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox8.Location = new System.Drawing.Point(652, 250);
+            this.textBox8.MaximumSize = new System.Drawing.Size(160, 27);
+            this.textBox8.MinimumSize = new System.Drawing.Size(160, 27);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(160, 27);
+            this.textBox8.TabIndex = 25;
+            this.textBox8.Text = "60";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(432, 257);
+            this.label10.MaximumSize = new System.Drawing.Size(0, 20);
+            this.label10.MinimumSize = new System.Drawing.Size(110, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(214, 20);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Текущий уровень врага:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.ArmorResistance_Text);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Lex_Prime);
@@ -370,6 +436,11 @@
         private System.Windows.Forms.Label Lex_Prime;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label ArmorResistance_Text;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label10;
     }
 }
 
