@@ -62,5 +62,22 @@ namespace WarframeCalc
 
             
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "18";
+            textBox2.Text = "144";
+            textBox3.Text = "18";
+            textBox4.Text = "180";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+            textBox3.Text = string.Empty;
+            textBox4.Text = string.Empty;
+            textBox5.Text = string.Empty;
+        }
     }
 }
