@@ -16,30 +16,33 @@ namespace WarframeCalc
         public Form1()
         {
             InitializeComponent();
-
         }
 
         double N = 16; //Константа всегда равная 16
 
-        double kvant, carmor, armor, MultiplierArmor, finarmor;
+        double kvant, carmor, armor, baselvl, currentlvl, MultiplierArmor, finarmor;
 
         double punch, piercing, slash, sum,
                punch1, piercing1, slash1,
                punch2, piercing2, slash2,
                punch3, piercing3, slash3;
-
+        double tt, ss;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            baselvl = Convert.ToInt32(textBox7.Text);
+            currentlvl = Convert.ToInt32(textBox8.Text);
+            CalcArmor();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             
             kvant = Math.Round(Convert.ToDouble(textBox4.Text) / N , 2);
-            
-            carmor = Convert.ToDouble(textBox6.Text);//чистая броня
-            MultiplierArmor = 1 + 0.005 * Math.Pow((Convert.ToDouble(textBox8.Text) - Convert.ToDouble(textBox7.Text)), 1.75); //Множитель брони до 70 лвл
-            finarmor = carmor * MultiplierArmor; //Финальная броня
-            label9.Text = $"Итоговая броня: {Math.Round(finarmor, 0)}";
-            armor = carmor / (carmor + 300);//сопротивление брони
-            ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100,3)}%";
+
+            baselvl = Convert.ToDouble(textBox7.Text);
+            currentlvl = Convert.ToDouble(textBox8.Text);
+
+            CalcArmor();
 
             punch =    Math.Round(Math.Round(Convert.ToDouble(textBox1.Text) / kvant) * kvant, 2);
             piercing = Math.Round(Math.Round(Convert.ToDouble(textBox2.Text) / kvant) * kvant, 2);
@@ -49,15 +52,15 @@ namespace WarframeCalc
             {
                 InfestedDamage();
             }
-            if (Grineer.Checked == true)
+            else if (Grineer.Checked == true)
             {
                 GrineerDamage();
             }
-            if (Corpus.Checked == true)
+            else if (Corpus.Checked == true)
             {
                 CorpusDamage();
             }
-            if (Orokin.Checked == true)
+            else if (Orokin.Checked == true)
             {
                 OrokinDamage();
             }
@@ -65,10 +68,68 @@ namespace WarframeCalc
 
         }
 
+        void CalcArmor()
+        {
+            carmor = Convert.ToDouble(textBox6.Text);
+            //чистая броня
+
+            MultiplierArmor = ArmorF1(currentlvl, baselvl) * (1 - S1(currentlvl,baselvl)) + ArmorF2(currentlvl,baselvl) * S1(currentlvl, baselvl);
+            finarmor = Math.Round(carmor * MultiplierArmor); 
+            //Финальная броня
+
+            armor = finarmor / (finarmor + 300);
+            //сопротивление брони
+
+            label9.Text = $"Итоговая броня: {Math.Round(finarmor, 2)}";
+            ArmorResistance_Text.Text = $"Сопротивление брони: {Math.Round(armor * 100, 2)}%";
+            label11.Text = $" Множитель брони: {Math.Round(MultiplierArmor, 2)}";
+
+        }
+
+        double T(double x, double y)
+        {
+            tt = (x - y - 70) / 10;
+            return tt;
+        }
+
+        double S1(double x, double y)
+        {
+            if (x - y < 70)
+            {
+                ss = 0;
+            }
+            else if (70 <= x - y && x - y <= 80)
+            {
+                ss = 3 * Math.Pow(T(x, y),2) - 2 * Math.Pow(T(x, y), 3);
+            }
+            else if (x - y > 80)
+            {
+                ss = 1;
+            }
+            return ss;
+        }
+
+        double ArmorF2(double x, double y)
+        {
+            MultiplierArmor = 1 + (0.4 * Math.Pow((x - y), 0.75));
+            //Множитель брони до 70 лвл
+
+            return MultiplierArmor;
+        }
+        double ArmorF1(double x, double y)
+        {
+            MultiplierArmor = 1 + (0.005 * Math.Pow((x - y), 1.75));
+            //Множитель брони от 70 до 79 лвл
+
+            return MultiplierArmor;
+        }
+
         void InfestedDamage()
         {
             slash = slash * 1.25;
+
             sum = Math.Round(punch + piercing + slash);
+
             textBox1.Text = punch.ToString();
             textBox2.Text = piercing.ToString();
             textBox3.Text = slash.ToString();
@@ -77,23 +138,27 @@ namespace WarframeCalc
         void GrineerDamage()
         {
 
+            double piercingarmor = Math.Round((finarmor * 0.5)/((finarmor * 0.5)+300),3);
+
             punch1 = Math.Round(punch * 0.75, 3);
             slash1 = slash * 1.25;
 
             piercing2 = piercing * 1.5;
             slash2 = slash1 * 0.85;
 
-            punch3 = punch1 * 0.75 * armor;
-            piercing3 = piercing2 * 0.5 * armor;
-            slash3 = slash2 * 0.85 * armor;
+            punch3 = Math.Round(punch1 * (1 - armor),2);
+            piercing3 = Math.Round(piercing2 * 1.5 * (1 - piercingarmor),2);
+            slash3 = Math.Round(slash2 * (1 - armor),2);
 
             sum = Math.Round(punch3 + piercing3 + slash3);
+
+
 
             textBox1.Text = punch3.ToString();
             textBox2.Text = piercing3.ToString();
             textBox3.Text = slash3.ToString();
-            textBox4.Text = armor.ToString();
-            textBox5.Text = sum.ToString();
+            textBox4.Text = sum.ToString();
+
         }
 
         void CorpusDamage()
